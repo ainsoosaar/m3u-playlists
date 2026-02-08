@@ -38,11 +38,17 @@ for (const ch of channels) {
       continue;
     }
     console.log("↩ cache used:", ch.name);
-  } else {
-    setCached(cache, ch.name, stream);
   }
 
-  ok(stats, ch.name, stream);
+  // Только валидный HLS в кеш
+  if (stream && stream.startsWith("http") && stream.includes(".m3u8")) {
+    setCached(cache, ch.name, stream);
+    ok(stats, ch.name, stream);
+  } else {
+    console.log("⛔ INVALID STREAM, SKIP:", ch.name);
+    fail(stats, ch.name);
+    continue;
+  }
 
   m3u += `#EXTINF:-1 tvg-id="${ch.epg}" tvg-name="${ch.epg}" tvg-logo="${ch.logo}" group-title="${ch.group}",${ch.name}\n`;
   m3u += `${stream}\n\n`;

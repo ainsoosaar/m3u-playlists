@@ -1,11 +1,9 @@
 {
-  "name": "ontivi-playlist",
+  "name": "ontivi-ipv-builder",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "scripts": {
-    "build": "node scripts/build_playlist.js"
-  },
   "dependencies": {
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^22.8.0"
   }
 }

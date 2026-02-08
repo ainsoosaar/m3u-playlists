@@ -1,23 +1,22 @@
 import https from "https";
 import { URL } from "url";
 
-export async function selectBestStream(urls) {
+export async function selectStream(urls) {
   let best = null;
-  let bestBw = 0;
+  let bwMax = 0;
 
   for (const u of urls) {
-    const text = await fetchText(u);
-    if (!text) continue;
+    const txt = await get(u);
+    if (!txt) continue;
 
-    if (!text.includes("#EXT-X-STREAM-INF")) {
-      if (await headOK(u)) return u;
+    if (!txt.includes("#EXT-X-STREAM-INF")) {
+      if (await tsOk(u)) return u;
       continue;
     }
 
-    const variants = parseVariants(text, u);
-    for (const v of variants) {
-      if (v.bandwidth > bestBw && await headOK(v.url)) {
-        bestBw = v.bandwidth;
+    for (const v of parse(txt, u)) {
+      if (v.bw > bwMax && await tsOk(v.url)) {
+        bwMax = v.bw;
         best = v.url;
       }
     }
@@ -25,35 +24,41 @@ export async function selectBestStream(urls) {
   return best;
 }
 
-function parseVariants(text, base) {
+function parse(txt, base) {
   const out = [];
-  const baseUrl = new URL(base);
+  const b = new URL(base);
+  const l = txt.split("\n");
 
-  const lines = text.split("\n");
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].startsWith("#EXT-X-STREAM-INF")) {
-      const bw = parseInt(lines[i].match(/BANDWIDTH=(\d+)/)?.[1] || 0);
-      const uri = lines[i + 1]?.trim();
-      if (uri) out.push({ bandwidth: bw, url: new URL(uri, baseUrl).toString() });
+  for (let i = 0; i < l.length; i++) {
+    if (l[i].startsWith("#EXT-X-STREAM-INF")) {
+      const bw = +l[i].match(/BANDWIDTH=(\d+)/)?.[1] || 0;
+      const uri = l[i + 1]?.trim();
+      if (uri) out.push({ bw, url: new URL(uri, b).toString() });
     }
   }
   return out;
 }
 
-function fetchText(url) {
-  return new Promise(res => {
-    https.get(url, r => {
-      let d = "";
-      r.on("data", c => d += c);
-      r.on("end", () => res(d));
-    }).on("error", () => res(null));
+function tsOk(m3u8) {
+  return new Promise(r => {
+    https.get(m3u8, res => {
+      let data = "";
+      res.on("data", d => data += d);
+      res.on("end", () => {
+        const ts = data.split("\n").find(l => l.endsWith(".ts"));
+        if (!ts) return r(false);
+        https.get(ts, rr => r(rr.statusCode === 200)).on("error", () => r(false));
+      });
+    }).on("error", () => r(false));
   });
 }
 
-function headOK(url) {
-  return new Promise(res => {
-    https.request(url, { method: "HEAD" }, r => res(r.statusCode === 200))
-      .on("error", () => res(false))
-      .end();
+function get(url) {
+  return new Promise(r => {
+    https.get(url, res => {
+      let d = "";
+      res.on("data", c => d += c);
+      res.on("end", () => r(d));
+    }).on("error", () => r(null));
   });
 }

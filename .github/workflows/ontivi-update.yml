@@ -1,6 +1,9 @@
 name: Ontivi IPTV Auto Update
 
 on:
+permissions:
+  contents: write
+
   schedule:
     - cron: "0 */6 * * *"   # каждые 6 часов
   workflow_dispatch:

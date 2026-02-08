@@ -10,15 +10,7 @@ const header = `#EXTM3U url-tvg="https://epg.it999.ru/epg.xml.gz"\n\n`;
 (async () => {
   const browser = await puppeteer.launch({
     headless: "new",
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-accelerated-2d-canvas",
-      "--no-zygote",
-      "--single-process",
-      "--disable-gpu"
-    ]
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
   });
 
   let playlist = header;
@@ -27,16 +19,13 @@ const header = `#EXTM3U url-tvg="https://epg.it999.ru/epg.xml.gz"\n\n`;
     const page = await browser.newPage();
     try {
       await page.goto(ch.page, { waitUntil: "networkidle2", timeout: 30000 });
-      await page.waitForTimeout(5000); // подождать подгрузку динамического JS
+      await page.waitForTimeout(5000);
 
       const stream = await extractStream(page);
-
-      // логируем результат
       console.log(ch.name, "->", stream);
 
-      // пропускаем, если пусто или не m3u8
       if (!stream || !stream.endsWith(".m3u8")) {
-        console.warn(`Пропускаем канал ${ch.name}, поток не найден или некорректный`);
+        console.warn(`Пропускаем канал ${ch.name}, поток не найден`);
         continue;
       }
 

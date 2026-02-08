@@ -1,42 +1,45 @@
-export async function sniffM3U8(page) {
+export async function sniffM3U8(page, timeout = 20000) {
   const client = await page.target().createCDPSession();
   await client.send("Network.enable");
 
   const found = new Set();
 
   client.on("Network.requestWillBeSent", e => {
-    const u = e.request.url;
-    if (u.includes(".m3u8")) found.add(u);
+    if (e.request.url.includes(".m3u8")) {
+      found.add(e.request.url);
+    }
   });
 
-  await kick(page);
+  await kickPlayer(page);
 
   const start = Date.now();
-  while (Date.now() - start < 25000) {
+  while (Date.now() - start < timeout) {
     if (found.size) break;
     await page.waitForTimeout(1000);
   }
 
-  return [...found];
+  return found.size ? [...found] : null;
 }
 
-async function kick(page) {
-  await page.mouse.move(320, 320);
-  await page.mouse.click(320, 320);
+async function kickPlayer(page) {
+  try {
+    await page.mouse.move(300, 300);
+    await page.mouse.click(300, 300);
 
-  await page.evaluate(() => {
-    document.querySelectorAll("video").forEach(v => {
-      try { v.muted = true; v.play(); } catch {}
-    });
-  });
-
-  for (const f of page.frames()) {
-    try {
-      await f.evaluate(() => {
-        document.querySelectorAll("video").forEach(v => {
-          try { v.muted = true; v.play(); } catch {}
-        });
+    await page.evaluate(() => {
+      document.querySelectorAll("video").forEach(v => {
+        try { v.muted = true; v.play(); } catch {}
       });
-    } catch {}
-  }
+    });
+
+    for (const frame of page.frames()) {
+      try {
+        await frame.evaluate(() => {
+          document.querySelectorAll("video").forEach(v => {
+            try { v.muted = true; v.play(); } catch {}
+          });
+        });
+      } catch {}
+    }
+  } catch {}
 }

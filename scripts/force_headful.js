@@ -1,7 +1,6 @@
 import fs from "fs";
 import puppeteer from "puppeteer";
-import { sniffM3U8 } from "./sniffer.js";
-import { selectBest, isValidM3U8 } from "./hls.js";
+import { sniffForceM3U8 } from "./sniffer_force.js";
 import { loadCache, setCached, saveCache } from "./cache.js";
 import { initStats, ok, fail } from "./stats.js";
 
@@ -35,21 +34,21 @@ for (const ch of channels) {
 
   try {
     await page.goto(ch.url, { waitUntil: "domcontentloaded", timeout: 60000 });
-    const urls = await sniffM3U8(page, 30000);
-    if (urls) {
-      stream = await selectBest(urls);
-      if (stream) console.log(`✅ Found new HLS stream: ${stream}`);
-    }
+
+    // Используем форсированный sniff, который ищет HLS в JS-плеерах и скриптах
+    stream = await sniffForceM3U8(page);
+
+    if (stream) console.log(`✅ Found new HLS stream: ${stream}`);
   } catch (err) {
-    console.log(`⛔ Sniff error: ${err.message}`);
+    console.log(`⛔ Error while processing channel: ${err.message}`);
   }
 
   await page.close();
 
   // fallback на кеш
-  if (!stream || !(await isValidM3U8(stream))) {
+  if (!stream) {
     const cached = cache[ch.name]?.url;
-    if (cached && (await isValidM3U8(cached))) {
+    if (cached) {
       stream = cached;
       console.log(`⚠ Using cached stream: ${stream}`);
     }
@@ -61,6 +60,7 @@ for (const ch of channels) {
     continue;
   }
 
+  // Только валидные HLS в кеш
   setCached(cache, ch.name, stream);
   ok(stats, ch.name, stream);
 

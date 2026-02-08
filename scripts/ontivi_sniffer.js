@@ -1,11 +1,11 @@
-export async function sniffM3U8(page, timeoutMs = 15000) {
+export function sniffM3U8(page, timeout = 15000) {
   return new Promise((resolve) => {
-    let done = false;
+    let finished = false;
 
     const onResponse = (response) => {
       const url = response.url();
-      if (!done && url.includes(".m3u8")) {
-        done = true;
+      if (!finished && url.includes(".m3u8")) {
+        finished = true;
         cleanup();
         resolve(url);
       }
@@ -17,12 +17,12 @@ export async function sniffM3U8(page, timeoutMs = 15000) {
     };
 
     const timer = setTimeout(() => {
-      if (!done) {
-        done = true;
+      if (!finished) {
+        finished = true;
         cleanup();
         resolve(null);
       }
-    }, timeoutMs);
+    }, timeout);
 
     page.on("response", onResponse);
   });

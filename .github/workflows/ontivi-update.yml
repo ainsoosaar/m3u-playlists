@@ -1,35 +1,41 @@
-name: Ontivi IPTV Auto Update
-
+name: Update Ontivi Playlist
 on:
   schedule:
-    - cron: "0 */4 * * *"   # каждые 4 часа
+    - cron: '0 */6 * * *'  # Каждые 6 часов
   workflow_dispatch:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm install
-
-      - run: node scripts/build_playlist.js
-
-      - name: Commit and push updated playlist
-        run: |
-          if git diff --quiet; then
-            echo "No changes"
-          else
-            git config user.name "iptv-bot"
-            git config user.email "bot@github"
-            git add playlists/ip.ontivi.net_playlist.m3u8
-            git commit -m "Auto update Ontivi IPTV playlist"
-            git push https://$GH_PAT@github.com/ainsoosaar/m3u-playlists.git HEAD:main
-          fi
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install puppeteer
+      
+    - name: Run playlist builder
+      run: node scripts/build_playlist.js
+      
+    - name: Commit and push if changed
+      if: success()
+      run: |
+        git config user.name "iptv-bot"
+        git config user.email "bot@github"
+        
+        if git diff --quiet; then
+          echo "No changes"
+        else
+          git add playlists/ip.ontivi.net_playlist.m3u8
+          git commit -m "Auto update Ontivi IPTV playlist"
+          # Используйте ваш форк
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/ВАШ_НИКНЕЙМ/m3u-playlists.git
+          git push origin HEAD:main
+        fi

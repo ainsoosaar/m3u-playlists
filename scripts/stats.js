@@ -8,14 +8,14 @@ export function initStats() {
   };
 }
 
-export function logOK(stats, name, stream) {
+export function ok(stats, name, stream) {
   stats.ok++;
   stats.channels[name] = "ok";
-  const host = new URL(stream).hostname;
-  stats.cdn[host] = (stats.cdn[host] || 0) + 1;
+  const h = new URL(stream).hostname;
+  stats.cdn[h] = (stats.cdn[h] || 0) + 1;
 }
 
-export function logFail(stats, name) {
+export function fail(stats, name) {
   stats.fail++;
   stats.channels[name] = "fail";
 }

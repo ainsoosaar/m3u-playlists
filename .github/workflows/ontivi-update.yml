@@ -1,37 +1,37 @@
-name: Update Ontivi Playlist
+name: Ontivi IPTV Auto Update
+
 on:
   schedule:
-    - cron: '0 */6 * * *' # каждые 6 часов
+    - cron: "0 */6 * * *"   # каждые 6 часов
   workflow_dispatch:
 
 jobs:
-  update-playlist:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build playlist
-      run: npm run build
+      - name: Build IPTV playlist
+        run: node scripts/build_playlist.js
 
-    - name: Commit and push if changed
-      env:
-        GH_PAT: ${{ secrets.GH_PAT }}
-      run: |
-        git config user.name "iptv-bot"
-        git config user.email "bot@github"
-        if git diff --quiet; then
-          echo "No changes"
-        else
-          git add playlists/ip.ontivi.net_playlist.m3u8
-          git commit -m "Auto update Ontivi IPTV playlist"
-          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }} HEAD:main
-        fi
+      - name: Commit & Push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+          else
+            git config user.name "iptv-bot"
+            git config user.email "bot@github"
+            git add playlists/ip.ontivi.net_playlist.m3u8
+            git commit -m "Auto update Ontivi IPTV playlist"
+            git push
+          fi

@@ -1,23 +1,44 @@
 name: Ontivi IPTV Auto Update
 
+# Настройка триггеров
 on:
+  # Ручной запуск через GitHub Actions UI
+  workflow_dispatch:
+    # Можно добавить параметры (необязательно)
+    inputs: 
+      branch:
+        description: 'Branch to run workflow'
+        default: 'main'
+        required: true
+
+  # Авто-запуск каждые 6 часов
   schedule:
     - cron: "0 */6 * * *"
-  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # Клонируем репозиторий
       - uses: actions/checkout@v4
+
+      # Устанавливаем Node.js
       - uses: actions/setup-node@v4
-        with: node-version: 20
+        with:
+          node-version: 20
+
+      # Устанавливаем зависимости
       - run: npm install
+
+      # Запуск headless обновления
       - run: node scripts/update_cache.js
+
+      # Коммит и пуш изменений только если есть diff
       - name: Commit & push
         run: |
           if git diff --quiet; then
-            echo "No changes"
+            echo "No changes to commit"
           else
             git config user.name "iptv-bot"
             git config user.email "bot@github"

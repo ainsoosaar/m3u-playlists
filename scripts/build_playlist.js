@@ -1,54 +1,70 @@
 import fs from "fs";
 import puppeteer from "puppeteer";
 import channels from "./channels.json" assert { type: "json" };
+import { sniffM3U8 } from "./ontivi_sniffer.js";
 
-const OUTPUT = "playlists/ip.ontivi.net_playlist.m3u8";
-const header = `#EXTM3U url-tvg="https://epg.it999.ru/epg.xml.gz"\n\n`;
-
-async function getStream(page) {
-  await page.waitForTimeout(5000);
-
-  return await page.evaluate(() => {
-    for (const s of document.scripts) {
-      const match = s.textContent.match(/https?:\/\/[^\s'"]+\.m3u8/);
-      if (match) return match[0];
-    }
-    const video = document.querySelector("video source[src$='.m3u8'], video[src$='.m3u8']");
-    if (video) return video.src;
-    return null;
-  });
-}
+const OUTPUT_FILE = "playlists/ip.ontivi.net_playlist.m3u8";
+const EPG_URL = "https://epg.it999.ru/epg.xml.gz";
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox", "--disable-setuid-sandbox"] });
-  let playlist = header;
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ]
+  });
 
-  for (const ch of channels) {
+  let playlist = `#EXTM3U url-tvg="${EPG_URL}"\n\n`;
+
+  for (const channel of channels) {
     const page = await browser.newPage();
-    try {
-      await page.goto(ch.page, { waitUntil: "networkidle2", timeout: 30000 });
-      const stream = await getStream(page);
 
-      if (!stream) {
-        console.warn(`Пропускаем канал ${ch.name}: поток не найден`);
+    try {
+      await page.setRequestInterception(true);
+
+      page.on("request", (req) => {
+        const type = req.resourceType();
+        if (type === "image" || type === "font" || type === "stylesheet") {
+          req.abort();
+        } else {
+          req.continue();
+        }
+      });
+
+      const sniffPromise = sniffM3U8(page);
+
+      await page.goto(channel.page, {
+        waitUntil: "networkidle2",
+        timeout: 30000
+      });
+
+      const streamUrl = await sniffPromise;
+
+      if (!streamUrl) {
+        console.error(`❌ STREAM NOT FOUND: ${channel.name}`);
         await page.close();
         continue;
       }
 
-      console.log(ch.name, "->", stream);
-
       playlist +=
-`#EXTINF:-1 tvg-id="${ch.tvgId}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.group}",${ch.name}
-${stream}\n\n`;
+`#EXTINF:-1 tvg-id="${channel.tvgId}" tvg-name="${channel.name}" tvg-logo="${channel.logo}" group-title="${channel.group}",${channel.name}
+${streamUrl}
+
+`;
+
+      console.log(`✅ OK: ${channel.name}`);
 
     } catch (err) {
-      console.error("Ошибка при обработке канала:", ch.name, err.message);
+      console.error(`⚠️ ERROR: ${channel.name}`);
     } finally {
       await page.close();
     }
   }
 
   await browser.close();
-  fs.writeFileSync(OUTPUT, playlist, "utf8");
-  console.log(`Плейлист сохранён: ${OUTPUT}`);
+  fs.writeFileSync(OUTPUT_FILE, playlist, "utf8");
+
+  console.log("🎉 PLAYLIST GENERATED");
 })();

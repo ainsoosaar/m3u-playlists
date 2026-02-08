@@ -12,6 +12,61 @@
     "tvgId": "Rossiya1",
     "group": "Базовый",
     "logo": "https://iptvlogos.com/logos/rossiya-1.png"
+  },
+  {
+    "name": "НТВ",
+    "page": "https://ip.ontivi.net/ntv5.html",
+    "tvgId": "NTV",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/ntv.png"
+  },
+  {
+    "name": "ТВ Центр",
+    "page": "https://ip.ontivi.net/tvc-tv4.html",
+    "tvgId": "TVC",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/tv-center.png"
+  },
+  {
+    "name": "РЕН ТВ",
+    "page": "https://ip.ontivi.net/114103-ren-tv.html",
+    "tvgId": "RENTV",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/ren-tv.png"
+  },
+  {
+    "name": "Пятый канал",
+    "page": "https://ip.ontivi.net/5-kanal6.html",
+    "tvgId": "Channel5",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/5-kanal.png"
+  },
+  {
+    "name": "Звезда",
+    "page": "https://ip.ontivi.net/zvezdatv.html",
+    "tvgId": "Zvezda",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/zvezda.png"
+  },
+  {
+    "name": "Домашний",
+    "page": "https://ip.ontivi.net/domashniytv.html",
+    "tvgId": "Domashniy",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/domashniy.png"
+  },
+  {
+    "name": "ТВ-3",
+    "page": "https://ip.ontivi.net/tv-3.html",
+    "tvgId": "TV3",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/tv-3.png"
+  },
+  {
+    "name": "ТНТ",
+    "page": "https://ip.ontivi.net/tnt22.html",
+    "tvgId": "TNT",
+    "group": "Базовый",
+    "logo": "https://iptvlogos.com/logos/tnt.png"
   }
-  // ...и остальные каналы
 ]

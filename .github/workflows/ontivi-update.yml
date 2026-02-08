@@ -1,33 +1,33 @@
 name: Ontivi IPTV Auto Update
 
 on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
 permissions:
   contents: write
-
-  schedule:
-    - cron: "0 */6 * * *"   # каждые 6 часов
-  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm install
 
-      - name: Build IPTV playlist
-        run: node scripts/build_playlist.js
+      - name: Build playlist
+        run: node scripts/build.js
 
-      - name: Commit & push if changed
+      - name: Commit & push
         run: |
           if git diff --quiet; then
             echo "No changes"

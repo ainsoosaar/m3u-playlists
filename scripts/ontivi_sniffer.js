@@ -1,19 +1,29 @@
 export async function sniffM3U8(page, timeoutMs = 15000) {
   return new Promise((resolve) => {
-    let resolved = false;
+    let done = false;
 
-    const timer = setTimeout(() => {
-      if (!resolved) resolve(null);
-    }, timeoutMs);
-
-    page.on("response", async (response) => {
+    const onResponse = (response) => {
       const url = response.url();
-
-      if (!resolved && url.includes(".m3u8")) {
-        resolved = true;
-        clearTimeout(timer);
+      if (!done && url.includes(".m3u8")) {
+        done = true;
+        cleanup();
         resolve(url);
       }
-    });
+    };
+
+    const cleanup = () => {
+      page.off("response", onResponse);
+      clearTimeout(timer);
+    };
+
+    const timer = setTimeout(() => {
+      if (!done) {
+        done = true;
+        cleanup();
+        resolve(null);
+      }
+    }, timeoutMs);
+
+    page.on("response", onResponse);
   });
 }

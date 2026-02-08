@@ -13,29 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Клонируем репозиторий
+      # 1️⃣ Клонируем репозиторий
       - uses: actions/checkout@v4
 
-      # Устанавливаем Node.js
+      # 2️⃣ Устанавливаем Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Устанавливаем зависимости
+      # 3️⃣ Устанавливаем зависимости
       - run: npm install
 
-      # Форсированное headful обновление плейлиста
-      - name: Run force_headful.js with logs
+      # 4️⃣ Форсированное headful обновление плейлиста
+      - name: Run force_headful.js with headful Puppeteer
         run: |
-          # Запуск виртуального дисплея для headful Puppeteer
+          # Запускаем виртуальный дисплей
           export DISPLAY=:99
           Xvfb :99 -screen 0 1280x800x16 &
           sleep 2
-          
-          # Запуск скрипта
+
+          echo "🕒 Starting force_headful.js"
           node scripts/force_headful.js
 
-      # Коммит и пуш только если есть изменения
+      # 5️⃣ Commit & push только если есть изменения
       - name: Commit & push
         run: |
           if git diff --quiet; then

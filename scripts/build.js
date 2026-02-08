@@ -1,85 +1,40 @@
-import fs from "fs";
-import puppeteer from "puppeteer";
-import channels from "./channels.json" assert { type: "json" };
-import { sniffM3U8 } from "./sniffer.js";
+import https from "https";
 
-const OUTPUT = "playlists/ip.ontivi.net_playlist.m3u8";
-const EPG = "https://epg.it999.ru/epg.xml.gz";
+async function checkStreamHealth(m3u8Url) {
+  const playlist = await fetchText(m3u8Url);
+  if (!playlist) return false;
 
-const NAV_TIMEOUT = 30000;
-const SNIFF_TIMEOUT = 15000;
+  const tsLine = playlist.split("\n").find(l => l.endsWith(".ts"));
+  if (!tsLine) return false;
 
-async function fetchStream(browser, channel) {
-  const page = await browser.newPage();
-
-  try {
-    await page.setRequestInterception(true);
-
-    page.on("request", (req) => {
-      const t = req.resourceType();
-      if (t === "image" || t === "font" || t === "stylesheet") {
-        req.abort();
-      } else {
-        req.continue();
-      }
-    });
-
-    const sniff = sniffM3U8(page, SNIFF_TIMEOUT);
-
-    await page.goto(channel.page, {
-      waitUntil: "networkidle2",
-      timeout: NAV_TIMEOUT
-    });
-
-    return await sniff;
-
-  } catch {
-    return null;
-  } finally {
-    if (!page.isClosed()) {
-      try { await page.close(); } catch {}
-    }
-  }
+  const tsUrl = new URL(tsLine, m3u8Url).toString();
+  return await headRequest(tsUrl);
 }
 
-(async () => {
-  const browser = await puppeteer.launch({
-    headless: "new",
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage"
-    ]
+function fetchText(url, timeout = 7000) {
+  return new Promise((resolve) => {
+    https.get(url, res => {
+      let data = "";
+      res.on("data", d => data += d);
+      res.on("end", () => resolve(data));
+    }).on("error", () => resolve(null))
+      .setTimeout(timeout, function () {
+        this.destroy();
+        resolve(null);
+      });
   });
+}
 
-  let playlist = `#EXTM3U url-tvg="${EPG}"\n\n`;
-  let ok = 0;
-  let fail = 0;
-
-  for (const ch of channels) {
-    const stream = await fetchStream(browser, ch);
-
-    if (!stream) {
-      console.log(`❌ ${ch.name}`);
-      fail++;
-      continue;
-    }
-
-    playlist +=
-`#EXTINF:-1 tvg-id="${ch.tvgId}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.group}",${ch.name}
-${stream}
-
-`;
-
-    console.log(`✅ ${ch.name}`);
-    ok++;
-  }
-
-  await browser.close();
-
-  fs.writeFileSync(OUTPUT, playlist, "utf8");
-
-  console.log("──────────────");
-  console.log(`OK:   ${ok}`);
-  console.log(`FAIL: ${fail}`);
-})();
+function headRequest(url, timeout = 5000) {
+  return new Promise((resolve) => {
+    const req = https.request(url, { method: "HEAD" }, res => {
+      resolve(res.statusCode === 200);
+    });
+    req.on("error", () => resolve(false));
+    req.setTimeout(timeout, () => {
+      req.destroy();
+      resolve(false);
+    });
+    req.end();
+  });
+}

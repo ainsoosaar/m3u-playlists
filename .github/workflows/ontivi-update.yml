@@ -1,15 +1,16 @@
 name: Update Ontivi Playlist
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Каждые 6 часов
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
-  build:
+  update-playlist:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
         
@@ -24,18 +25,16 @@ jobs:
     - name: Run playlist builder
       run: node scripts/build_playlist.js
       
-    - name: Commit and push if changed
-      if: success()
-      run: |
-        git config user.name "iptv-bot"
-        git config user.email "bot@github"
-        
-        if git diff --quiet; then
-          echo "No changes"
-        else
-          git add playlists/ip.ontivi.net_playlist.m3u8
-          git commit -m "Auto update Ontivi IPTV playlist"
-          # Используйте ваш форк
-          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/ВАШ_НИКНЕЙМ/m3u-playlists.git
-          git push origin HEAD:main
-        fi
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GH_PAT }}
+        commit-message: "Auto update Ontivi IPTV playlist"
+        title: "Auto-update: Ontivi IPTV playlist"
+        body: |
+          Automated playlist update from GitHub Actions
+          
+          - Updated: $(date '+%Y-%m-%d %H:%M')
+          - Source: Ontivi IPTV
+        branch: auto-update-playlist
+        base: main

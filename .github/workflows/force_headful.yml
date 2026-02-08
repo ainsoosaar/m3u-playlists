@@ -1,0 +1,48 @@
+name: Ontivi IPTV Force Headful Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run workflow'
+        default: 'main'
+        required: true
+
+jobs:
+  headful_update:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Клонируем репозиторий
+      - uses: actions/checkout@v4
+
+      # Устанавливаем Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Устанавливаем зависимости
+      - run: npm install
+
+      # Форсированное headful обновление плейлиста
+      - name: Run force_headful.js with logs
+        run: |
+          # Запуск виртуального дисплея для headful Puppeteer
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1280x800x16 &
+          sleep 2
+          
+          # Запуск скрипта
+          node scripts/force_headful.js
+
+      # Коммит и пуш только если есть изменения
+      - name: Commit & push
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            git config user.name "iptv-bot"
+            git config user.email "bot@github"
+            git add playlists/ip.ontivi.net_playlist.m3u8 scripts/stats.json scripts/streams_cache.json
+            git commit -m "Force headful update Ontivi IPTV playlist"
+            git push

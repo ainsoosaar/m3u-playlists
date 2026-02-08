@@ -1,0 +1,9 @@
+{
+  "name": "ontivi-ipTV-builder",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^22.0.0"
+  }
+}

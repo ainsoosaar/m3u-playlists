@@ -1,79 +1,71 @@
 import https from "https";
 import { URL } from "url";
 
-export function sniffM3U8(page, timeout = 15000) {
-  return new Promise((resolve) => {
-    const found = new Set();
-    let done = false;
+export async function sniffM3U8(page) {
+  await page.waitForTimeout(6000);
 
-    const onResponse = (res) => {
-      const url = res.url();
-      if (url.includes(".m3u8")) {
-        found.add(url);
-      }
-    };
+  const urls = new Set();
 
-    const cleanup = () => {
-      page.off("response", onResponse);
-      clearTimeout(timer);
-    };
+  const listener = res => {
+    const u = res.url();
+    if (u.includes(".m3u8")) urls.add(u);
+  };
 
-    const timer = setTimeout(async () => {
-      if (done) return;
-      done = true;
-      cleanup();
+  page.on("response", listener);
+  await page.waitForTimeout(8000);
+  page.off("response", listener);
 
-      const best = await selectBestByBitrate([...found]);
-      resolve(best);
-    }, timeout);
+  const list = [...urls].filter(u => !u.includes("master") || !u.includes("0"));
+  if (!list.length) return null;
 
-    page.on("response", onResponse);
-  });
+  return await selectBestByBitrate(list);
 }
 
 async function selectBestByBitrate(urls) {
-  if (!urls.length) return null;
+  let best = null;
+  let maxBw = 0;
 
-  // приоритет: master.m3u8
-  const master = urls.find(u => u.toLowerCase().includes("master"));
-  if (!master) return urls[0];
+  for (const u of urls) {
+    const text = await fetchText(u);
+    if (!text) continue;
 
-  const content = await fetchText(master);
-  if (!content) return master;
-
-  const variants = parseVariants(content, master);
-  if (!variants.length) return master;
-
-  variants.sort((a, b) => b.bandwidth - a.bandwidth);
-  return variants[0].url;
+    const variants = parseVariants(text, u);
+    for (const v of variants) {
+      if (v.bandwidth > maxBw) {
+        maxBw = v.bandwidth;
+        best = v.url;
+      }
+    }
+  }
+  return best;
 }
 
-function parseVariants(text, masterUrl) {
+function parseVariants(text, baseUrl) {
   const lines = text.split("\n");
-  const base = new URL(masterUrl);
-
-  const result = [];
+  const base = new URL(baseUrl);
+  const out = [];
 
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].startsWith("#EXT-X-STREAM-INF")) {
-      const bwMatch = lines[i].match(/BANDWIDTH=(\d+)/);
-      const bw = bwMatch ? parseInt(bwMatch[1], 10) : 0;
+      const bw = parseInt(lines[i].match(/BANDWIDTH=(\d+)/)?.[1] || 0);
       const uri = lines[i + 1]?.trim();
-      if (!uri) continue;
-
-      const absUrl = new URL(uri, base).toString();
-      result.push({ bandwidth: bw, url: absUrl });
+      if (uri) {
+        out.push({
+          bandwidth: bw,
+          url: new URL(uri, base).toString()
+        });
+      }
     }
   }
-  return result;
+  return out;
 }
 
 function fetchText(url, timeout = 7000) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     https.get(url, res => {
-      let data = "";
-      res.on("data", d => data += d);
-      res.on("end", () => resolve(data));
+      let d = "";
+      res.on("data", c => d += c);
+      res.on("end", () => resolve(d));
     }).on("error", () => resolve(null))
       .setTimeout(timeout, function () {
         this.destroy();

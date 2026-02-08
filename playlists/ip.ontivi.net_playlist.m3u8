@@ -1,0 +1,113 @@
+#EXTM3U url-tvg="https://epg.it999.ru/epg.xml.gz"
+
+############################
+## БАЗОВЫЙ
+############################
+
+#EXTINF:-1 tvg-id="PerviyKanal" tvg-name="Первый канал" tvg-logo="https://iptvlogos.com/logos/pervyj-kanal.png" group-title="Базовый",Первый канал
+https://ip.ontivi.net/025813-pervyy-kanal.html
+
+#EXTINF:-1 tvg-id="Rossiya1" tvg-name="Россия 1" tvg-logo="https://iptvlogos.com/logos/rossiya-1.png" group-title="Базовый",Россия 1
+https://ip.ontivi.net/128409-rossiya-1tv.html
+
+#EXTINF:-1 tvg-id="NTV" tvg-name="НТВ" tvg-logo="https://iptvlogos.com/logos/ntv.png" group-title="Базовый",НТВ
+https://ip.ontivi.net/ntv5.html
+
+#EXTINF:-1 tvg-id="TVC" tvg-name="ТВ Центр" tvg-logo="https://iptvlogos.com/logos/tv-center.png" group-title="Базовый",ТВ Центр
+https://ip.ontivi.net/tvc-tv4.html
+
+#EXTINF:-1 tvg-id="RENTV" tvg-name="РЕН ТВ" tvg-logo="https://iptvlogos.com/logos/ren-tv.png" group-title="Базовый",РЕН ТВ
+https://ip.ontivi.net/114103-ren-tv.html
+
+#EXTINF:-1 tvg-id="Channel5" tvg-name="Пятый канал" tvg-logo="https://iptvlogos.com/logos/5-kanal.png" group-title="Базовый",Пятый канал
+https://ip.ontivi.net/5-kanal6.html
+
+#EXTINF:-1 tvg-id="Zvezda" tvg-name="Звезда" tvg-logo="https://iptvlogos.com/logos/zvezda.png" group-title="Базовый",Звезда
+https://ip.ontivi.net/zvezdatv.html
+
+#EXTINF:-1 tvg-id="Domashniy" tvg-name="Домашний" tvg-logo="https://iptvlogos.com/logos/domashniy.png" group-title="Базовый",Домашний
+https://ip.ontivi.net/domashniytv.html
+
+#EXTINF:-1 tvg-id="TV3" tvg-name="ТВ-3" tvg-logo="https://iptvlogos.com/logos/tv-3.png" group-title="Базовый",ТВ-3
+https://ip.ontivi.net/tv-3.html
+
+#EXTINF:-1 tvg-id="TNT" tvg-name="ТНТ" tvg-logo="https://iptvlogos.com/logos/tnt.png" group-title="Базовый",ТНТ
+https://ip.ontivi.net/tnt22.html
+
+#EXTINF:-1 tvg-id="CHE" tvg-name="ЧЕ!" tvg-logo="https://iptvlogos.com/logos/che.png" group-title="Базовый",ЧЕ!
+https://ip.ontivi.net/076208-chetv.html
+
+#EXTINF:-1 tvg-id="Moskva24" tvg-name="Москва 24" tvg-logo="https://iptvlogos.com/logos/moskva-24.png" group-title="Базовый",Москва 24
+https://ip.ontivi.net/moskva-24tv.html
+
+#EXTINF:-1 tvg-id="BBCWorld" tvg-name="BBC World News" tvg-logo="https://iptvlogos.com/logos/bbc-world-news.png" group-title="Базовый",BBC World News
+https://ip.ontivi.net/bbc-world-newstv.html
+
+
+############################
+## КИНО
+############################
+
+#EXTINF:-1 tvg-id="DomKino" tvg-name="Дом Кино" tvg-logo="https://iptvlogos.com/logos/dom-kino.png" group-title="Кино",Дом Кино
+https://ip.ontivi.net/036112-domkino.html
+
+#EXTINF:-1 tvg-id="DomKinoPremium" tvg-name="Дом Кино Премиум" tvg-logo="https://iptvlogos.com/logos/dom-kino-premium.png" group-title="Кино",Дом Кино Премиум
+https://ip.ontivi.net/071815-dom-kino-premium.html
+
+#EXTINF:-1 tvg-id="KinoTV" tvg-name="Кино ТВ" tvg-logo="https://iptvlogos.com/logos/kino-tv.png" group-title="Кино",Кино ТВ
+https://ip.ontivi.net/071024-kino-tv.html
+
+#EXTINF:-1 tvg-id="Mosfilm" tvg-name="Мосфильм" tvg-logo="https://iptvlogos.com/logos/mosfilm.png" group-title="Кино",Мосфильм
+https://ip.ontivi.net/111421-mosfilm.html
+
+#EXTINF:-1 tvg-id="SovetskoeKino" tvg-name="Советское кино" tvg-logo="https://iptvlogos.com/logos/sovetskoe-kino.png" group-title="Кино",Советское кино
+https://ip.ontivi.net/sovetskoe-kino.html
+
+#EXTINF:-1 tvg-id="HollywoodHD" tvg-name="Hollywood HD" tvg-logo="https://iptvlogos.com/logos/hollywood-hd.png" group-title="Кино",Hollywood HD
+https://ip.ontivi.net/hollywood-hd7.html
+
+#EXTINF:-1 tvg-id="FX" tvg-name="FX" tvg-logo="https://iptvlogos.com/logos/fx.png" group-title="Кино",FX
+https://ip.ontivi.net/fx-tv.html
+
+#EXTINF:-1 tvg-id="SonyChannel" tvg-name="Sony Channel" tvg-logo="https://iptvlogos.com/logos/sony-channel.png" group-title="Кино",Sony Channel
+https://ip.ontivi.net/sony-channel2.html
+
+#EXTINF:-1 tvg-id="NTVSerial" tvg-name="НТВ Сериал" tvg-logo="https://iptvlogos.com/logos/ntv-serial.png" group-title="Кино",НТВ Сериал
+https://ip.ontivi.net/ntv-serial5.html
+
+
+############################
+## ДЕТСКИЙ
+############################
+
+#EXTINF:-1 tvg-id="Karusel" tvg-name="Карусель" tvg-logo="https://iptvlogos.com/logos/karusel.png" group-title="Детский",Карусель
+https://ip.ontivi.net/karuseltv.html
+
+#EXTINF:-1 tvg-id="Nickelodeon" tvg-name="Nickelodeon" tvg-logo="https://iptvlogos.com/logos/nickelodeon.png" group-title="Детский",Nickelodeon
+https://ip.ontivi.net/nickelodeontv.html
+
+#EXTINF:-1 tvg-id="NickJr" tvg-name="Nick Jr" tvg-logo="https://iptvlogos.com/logos/nick-jr.png" group-title="Детский",Nick Jr
+https://ip.ontivi.net/nick-jrtv.html
+
+#EXTINF:-1 tvg-id="DisneyChannel" tvg-name="Disney Channel" tvg-logo="https://iptvlogos.com/logos/disney.png" group-title="Детский",Disney Channel
+https://ip.ontivi.net/disney2.html
+
+#EXTINF:-1 tvg-id="Mult" tvg-name="Мульт" tvg-logo="https://iptvlogos.com/logos/mult.png" group-title="Детский",Мульт
+https://ip.ontivi.net/multtv.html
+
+
+############################
+## СПОРТ
+############################
+
+#EXTINF:-1 tvg-id="Eurosport1" tvg-name="Eurosport 1" tvg-logo="https://iptvlogos.com/logos/eurosport-1.png" group-title="Спорт",Eurosport 1
+https://ip.ontivi.net/eurosport-1.html
+
+#EXTINF:-1 tvg-id="Eurosport2" tvg-name="Eurosport 2" tvg-logo="https://iptvlogos.com/logos/eurosport-2.png" group-title="Спорт",Eurosport 2
+https://ip.ontivi.net/eurosport-2.html
+
+#EXTINF:-1 tvg-id="UFCHD" tvg-name="UFC HD" tvg-logo="https://iptvlogos.com/logos/ufc.png" group-title="Спорт",UFC HD
+https://ip.ontivi.net/ufc-hd.html
+
+#EXTINF:-1 tvg-id="Qazsport" tvg-name="Qazsport" tvg-logo="https://iptvlogos.com/logos/qazsport.png" group-title="Спорт",Qazsport
+https://ip.ontivi.net/108302-kazsport.html

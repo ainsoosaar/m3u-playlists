@@ -10,7 +10,15 @@ const header = `#EXTM3U url-tvg="https://epg.it999.ru/epg.xml.gz"\n\n`;
 (async () => {
   const browser = await puppeteer.launch({
     headless: "new",
-    args: ["--no-sandbox"]
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-accelerated-2d-canvas",
+      "--no-zygote",
+      "--single-process",
+      "--disable-gpu"
+    ]
   });
 
   let playlist = header;
@@ -29,7 +37,7 @@ const header = `#EXTM3U url-tvg="https://epg.it999.ru/epg.xml.gz"\n\n`;
 ${stream}\n\n`;
 
     } catch (e) {
-      console.error("Ошибка:", ch.name);
+      console.error("Ошибка:", ch.name, e.message);
     } finally {
       await page.close();
     }

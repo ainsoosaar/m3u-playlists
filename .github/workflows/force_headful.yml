@@ -46,3 +46,4 @@ jobs:
             git add playlists/ip.ontivi.net_playlist.m3u8 scripts/stats.json scripts/streams_cache.json
             git commit -m "Force headful update Ontivi IPTV playlist"
             git push
+          fi

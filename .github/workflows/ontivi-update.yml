@@ -1,6 +1,5 @@
-name: Ontivi IPTV Auto Update
+name: Ontivi IPTV Force Update
 
-# Триггеры
 on:
   # Ручной запуск через UI
   workflow_dispatch:
@@ -10,30 +9,23 @@ on:
         default: 'main'
         required: true
 
-  # Авто-запуск каждые 6 часов
-  schedule:
-    - cron: "0 */6 * * *"
-
 jobs:
-  build:
+  force_update:
     runs-on: ubuntu-latest
 
     steps:
-      # Клонируем репозиторий
       - uses: actions/checkout@v4
 
-      # Устанавливаем Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Устанавливаем зависимости
       - run: npm install
 
-      # Запуск headless обновления плейлиста
-      - run: node scripts/update_cache.js
+      # Форсированное обновление
+      - run: node scripts/force_update.js
 
-      # Коммит и пуш только если есть изменения
+      # Коммит и пуш
       - name: Commit & push
         run: |
           if git diff --quiet; then
@@ -42,6 +34,6 @@ jobs:
             git config user.name "iptv-bot"
             git config user.email "bot@github"
             git add playlists/ip.ontivi.net_playlist.m3u8 scripts/stats.json scripts/streams_cache.json
-            git commit -m "Auto update Ontivi IPTV playlist"
+            git commit -m "Force update Ontivi IPTV playlist"
             git push
           fi

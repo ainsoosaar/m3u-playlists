@@ -1,9 +1,11 @@
 {
-  "name": "ontivi-ipTV-builder",
+  "name": "ontivi-playlist",
   "version": "1.0.0",
   "type": "module",
-  "private": true,
+  "scripts": {
+    "build": "node scripts/build_playlist.js"
+  },
   "dependencies": {
-    "puppeteer": "^22.0.0"
+    "puppeteer": "^21.0.0"
   }
 }

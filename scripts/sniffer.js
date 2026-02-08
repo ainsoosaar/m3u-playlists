@@ -1,44 +1,38 @@
-export async function sniffM3U8(page, timeout = 20000) {
+export async function sniffM3U8(page) {
   const client = await page.target().createCDPSession();
   await client.send("Network.enable");
 
   const found = new Set();
 
   client.on("Network.requestWillBeSent", e => {
-    const url = e.request.url;
-    if (url.includes(".m3u8")) found.add(url);
+    const u = e.request.url;
+    if (u.includes(".m3u8")) found.add(u);
   });
 
-  // 👉 запускаем плеер
-  await kickPlayer(page);
+  await kick(page);
 
   const start = Date.now();
-  while (Date.now() - start < timeout) {
+  while (Date.now() - start < 25000) {
     if (found.size) break;
     await page.waitForTimeout(1000);
   }
 
-  if (!found.size) return null;
-
   return [...found];
 }
 
-async function kickPlayer(page) {
-  // mouse
-  await page.mouse.move(300, 300);
-  await page.mouse.click(300, 300);
+async function kick(page) {
+  await page.mouse.move(320, 320);
+  await page.mouse.click(320, 320);
 
-  // video.play()
   await page.evaluate(() => {
     document.querySelectorAll("video").forEach(v => {
       try { v.muted = true; v.play(); } catch {}
     });
   });
 
-  // iframe dive
-  for (const frame of page.frames()) {
+  for (const f of page.frames()) {
     try {
-      await frame.evaluate(() => {
+      await f.evaluate(() => {
         document.querySelectorAll("video").forEach(v => {
           try { v.muted = true; v.play(); } catch {}
         });

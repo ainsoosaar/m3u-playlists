@@ -1,18 +1,10 @@
 export function initStats() {
-  return {
-    ts: new Date().toISOString(),
-    ok: 0,
-    fail: 0,
-    cdn: {},
-    channels: {}
-  };
+  return { ts: new Date().toISOString(), ok: 0, fail: 0, channels: {} };
 }
 
-export function ok(stats, name, stream) {
+export function ok(stats, name) {
   stats.ok++;
   stats.channels[name] = "ok";
-  const h = new URL(stream).hostname;
-  stats.cdn[h] = (stats.cdn[h] || 0) + 1;
 }
 
 export function fail(stats, name) {

@@ -1,8 +1,13 @@
 export function initStats() {
-  return { ts: new Date().toISOString(), ok: 0, fail: 0, channels: {} };
+  return {
+    ts: new Date().toISOString(),
+    ok: 0,
+    fail: 0,
+    channels: {}
+  };
 }
 
-export function ok(stats, name) {
+export function ok(stats, name, stream) {
   stats.ok++;
   stats.channels[name] = "ok";
 }

@@ -1,37 +1,40 @@
-name: Ontivi IPTV Update
+name: Ontivi IPTV Auto Update
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: "0 */6 * * *"   # каждые 6 часов
+  workflow_dispatch:          # ручной запуск
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      # 1️⃣ Клонируем репозиторий
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      # 2️⃣ Устанавливаем Node.js
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
+      # 3️⃣ Устанавливаем зависимости Puppeteer
+      - run: npm install
 
-      - name: Build IPTV playlist (headless)
+      # 4️⃣ Запускаем headless сборку (валидный кеш уже есть)
+      - name: Run build.js (headless)
         run: node scripts/build.js
 
-      - name: Commit & push changes
+      # 5️⃣ Коммит и пуш изменений (только если есть)
+      - name: Commit & push
         run: |
-          if git diff --quiet; then
+          git config user.name "iptv-bot"
+          git config user.email "bot@github"
+          git add playlists/ip.ontivi.net_playlist.m3u8 scripts/stats.json scripts/streams_cache.json
+          if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git config user.name "iptv-bot"
-            git config user.email "bot@github"
-            git add playlists/ip.ontivi.net_playlist.m3u8 scripts/streams_cache.json scripts/stats.json
             git commit -m "Auto update Ontivi IPTV playlist"
             git push
           fi
+        shell: bash

@@ -1,11 +1,11 @@
 import fs from "fs";
 
 const FILE = "scripts/streams_cache.json";
-const TTL = 1000 * 60 * 60 * 24;
+const TTL = 1000 * 60 * 60 * 24; // 24 часа
 
 export function loadCache() {
   if (!fs.existsSync(FILE)) return {};
-  return JSON.parse(fs.readFileSync(FILE));
+  return JSON.parse(fs.readFileSync(FILE, "utf8"));
 }
 
 export function getCached(cache, name) {

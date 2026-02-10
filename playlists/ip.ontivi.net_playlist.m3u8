@@ -1,153 +1,188 @@
-#EXTM3U
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Смотреть онлайн ТВ каналы прямой эфир бесплатно</title>
 
-# ДЕТСКИЕ
-#EXTINF:-1 tvg-id="   " tvg-name="В Гостях у Сказки" tvg-logo="https://pokaz.me/posts/2018-11/1541144907_v_gostyah_v_skazki.png" group-title="Детские",В Гостях у Сказки
-https://s.pokaz.me/LOSbscWabHh_FkcGH4hAGw/550/1770752229/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="Ералаш" tvg-logo="https://pokaz.me/posts/2017-11/1511598417_eralash.png" group-title="Детские",Ералаш
-https://s.pokaz.me/olb3ZEG2tUkQZkW5fZ6eog/512/1770752242/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="Карусель" tvg-logo="https://pokaz.me/posts/2017-12/1513413729__karusel.png" group-title="Детские",Карусель
-https://s.pokaz.me/LNZN2ZajvyWLvsWCreDaZQ/157/1770752251/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="СоюзМультфильм" tvg-logo="https://pokaz.me/posts/2017-11/1511427514_1421945112_soyuzmultfilm.png" group-title="Детские",СоюзМультфильм
-https://s.pokaz.me/511/index.m3u8?k=1770752230p502i89i921i19Sc3e144791769e3847bb1b3a16f1cb64d
-#EXTINF:-1 tvg-id="Gulli" tvg-name="Gulli" tvg-logo="https://pokaz.me/posts/2018-01/1516184153_gulli.png" group-title="Детские",Gulli
-https://s.pokaz.me/XgTtL7E57ZGrP2blfsQMuQ/180/1770752247/index.m3u8
-#EXTINF:-1 tvg-id="Nick Jr" tvg-name="Nick Jr" tvg-logo="https://pokaz.me/posts/2017-12/1512375336_nick-jr.png" group-title="Детские",Nick Jr
-https://s.pokaz.me/UX9VU50M65iHbmLgvDey7A/155/1770752255/index.m3u8
-#EXTINF:-1 tvg-id="Nickelodeon" tvg-name="Nickelodeon" tvg-logo="https://pokaz.me/posts/2017-11/1511429116_1381948724_nickelodeon.png" group-title="Детские",Nickelodeon
-https://s.pokaz.me/UX9VU50M65iHbmLgvDey7A/155/1770752255/index.m3u8
-#EXTINF:-1 tvg-id="Tiji" tvg-name="Tiji" tvg-logo="https://pokaz.me/posts/2017-12/1512377041_tiji.png" group-title="Детские",Tiji
-https://s.pokaz.me/sAC2-6QIFMHRDFSSV_AYCg/202/1770752237/index.m3u8
+<meta name="yandex-verification" content="eb93f49132367814" />
 
-# КИНО
-#EXTINF:-1 tvg-id=" " tvg-name="Дом кино" tvg-logo="https://pokaz.me/posts/2017-11/1511429168_1393714236_domkino.png" group-title="Кино",Дом кино
-https://s.pokaz.me/lz8a4v8pabcPAmtM3WC6mg/186/1770752026/index.m3u8
-#EXTINF:-1 tvg-id="  " tvg-name="Дом кино Премиум" tvg-logo="https://pokaz.me/posts/2017-11/1512068026_dom-kino-premium.png" group-title="Кино",Дом кино Премиум
-https://s.pokaz.me/187/index.m3u8?k=1770752062p502i89i921i19Sae63f269178766bad1e1927d8af93b08
-#EXTINF:-1 tvg-id="" tvg-name="Дорама" tvg-logo="https://pokaz.me/posts/2018-11/1541870614_dorama.png" group-title="Кино",Дорама
-https://s.pokaz.me/wrcdWeM8NFEr_ScBVgQQYw/562/1770752035/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="ЕвроКино" tvg-logo="https://pokaz.me/posts/2017-11/1511374986_eurokino.png" group-title="Кино",ЕвроКино
-https://s.pokaz.me/pK3QJCBrazRk0w-G7fzyOg/126/1770752061/index.m3u8
-#EXTINF:-1 tvg-id="Plus" tvg-name="ИллюзионPlus" tvg-logo="https://pokaz.me/posts/2018-05/1526240995_illyuzion-plyus.png" group-title="Кино",ИллюзионPlus
-https://s.pokaz.me/130/index.m3u8?k=1770752013p502i89i921i19S84d9403a57277c6773df8dfcde042118
-#EXTINF:-1 tvg-id=" " tvg-name="Любимое Кино" tvg-logo="https://pokaz.me/posts/2018-11/1541144693_lubimoe_kino.png" group-title="Кино",Любимое Кино
-https://s.pokaz.me/534/index.m3u8?k=1770752036p502i89i921i19S7cbeb20c3008c3adf06d978da4b9bc18
-#EXTINF:-1 tvg-id=" " tvg-name="Мир сериала" tvg-logo="https://pokaz.me/posts/2018-04/1524073959_mir-seriala.png" group-title="Кино",Мир сериала
-https://s.pokaz.me/LSvyA5YCdCaT9_JqhkT9tA/589/1770752022/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Наше крутое" tvg-logo="https://pokaz.me/posts/2017-11/1511427434_1503338197_nash-detektiv-1.png" group-title="Кино",Наше крутое
-https://s.pokaz.me/6MWpg_NwWlgL50ZFqTYy9Q/171/1770752057/index.m3u8
-#EXTINF:-1 tvg-id=" HD" tvg-name="Остросюжетное HD" tvg-logo="https://pokaz.me/posts/2017-11/1511427178_1461318239_ostrosyuzhetnoe-hd.png" group-title="Кино",Остросюжетное HD
-https://s.pokaz.me/7ahFXKayYi_wQmtVyR58sw/578/1770752074/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Русский бестселлер" tvg-logo="https://pokaz.me/posts/2017-12/1513005099_russkiy-bestseller.png" group-title="Кино",Русский бестселлер
-https://s.pokaz.me/cm1Dg5fvFOFdVeCFgaeeDg/135/1770752043/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Русский иллюзион" tvg-logo="https://pokaz.me/posts/2018-12/1545252175_illyuzion.png" group-title="Кино",Русский иллюзион
-https://s.pokaz.me/8yq-8v4rbhHztrSia_2_Ew/131/1770752052/index.m3u8
-#EXTINF:-1 tvg-id=" HD" tvg-name="Шокирующее HD" tvg-logo="https://pokaz.me/posts/2019-02/1550063189_shokiruyuschee_hd.png" group-title="Кино",Шокирующее HD
-https://s.pokaz.me/7b8gkaOKU06674BXgMpe-Q/169/1770752030/index.m3u8
-#EXTINF:-1 tvg-id="Bollywood" tvg-name="Bollywood" tvg-logo="https://pokaz.me/posts/2018-12/1545320274_bollywood.png" group-title="Кино",Bollywood
-https://s.pokaz.me/184/index.m3u8?k=1770752075p502i89i921i19Sd124d8fa98ef0bad4e8724b0b96a26b7
-#EXTINF:-1 tvg-id="Fox live" tvg-name="Fox live" tvg-logo="https://pokaz.me/posts/2018-12/1545319966_fox_life.png" group-title="Кино",Fox live
-https://s.pokaz.me/eVKYzAT1GkNyNRyFE90N8A/568/1770752070/index.m3u8
-#EXTINF:-1 tvg-id="SciFi" tvg-name="Sci-Fi" tvg-logo="https://pokaz.me/posts/2017-12/1512204483_sony-sci-fi.png" group-title="Кино",Sci-Fi
-https://s.pokaz.me/9mVlU1inBEor0kkhwrw4Mg/145/1770752048/index.m3u8
 
-# МУЗЫКА
-#EXTINF:-1 tvg-id=" " tvg-name="МСМ ТОР" tvg-logo="https://pokaz.me/posts/2018-12/1545252048_mcm_topr.png" group-title="Музыка",МСМ ТОР
-https://s.pokaz.me/e-KByXchE_1N8GWvkslm1g/535/1770752083/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Муз ТВ" tvg-logo="https://pokaz.me/posts/2018-11/1542829296_muztv_.png" group-title="Музыка",Муз ТВ
-https://s.pokaz.me/LV1FO5VZyY41LAj-41b5gQ/596/1770752095/index.m3u8
-#EXTINF:-1 tvg-id=" MUSIC" tvg-name="ТНТ MUSIC" tvg-logo="https://pokaz.me/posts/2018-12/1545320553_tnt__music.png" group-title="Музыка",ТНТ MUSIC
-https://s.pokaz.me/d_gtVZHUX73PZ0UOYMjQDw/159/1770752112/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Шансон ТВ" tvg-logo="https://pokaz.me/posts/2017-11/1511427103_1393348724_shanson.png" group-title="Музыка",Шансон ТВ
-https://s.pokaz.me/sn-GFlA0VM4o9pBdRgFtoQ/165/1770752087/index.m3u8
-#EXTINF:-1 tvg-id="MTV Hits" tvg-name="MTV Hits" tvg-logo="https://pokaz.me/posts/2018-12/1545319638_mtv_hits.png" group-title="Музыка",MTV Hits
-https://s.pokaz.me/aZnyc5e1sL72V1U3X-6z0A/204/1770752103/index.m3u8
-#EXTINF:-1 tvg-id="RU TV" tvg-name="RU TV" tvg-logo="https://pokaz.me/posts/2018-04/1524604083_ru-tv.png" group-title="Музыка",RU TV
-https://s.pokaz.me/LV1FO5VZyY41LAj-41b5gQ/596/1770752095/index.m3u8
-#EXTINF:-1 tvg-id="VH1 Classik" tvg-name="VH1 Classik" tvg-logo="https://pokaz.me/posts/2017-12/1512733846__vh1.png" group-title="Музыка",VH1 Classik
-https://s.pokaz.me/sn-GFlA0VM4o9pBdRgFtoQ/165/1770752087/index.m3u8
-#EXTINF:-1 tvg-id="VH1 Europe" tvg-name="VH1 Europe" tvg-logo="https://pokaz.me/posts/2017-12/1512812438_vh1.png" group-title="Музыка",VH1 Europe
-https://s.pokaz.me/PVaaO1RhUC4GK4k4YKXClw/175/1770752107/index.m3u8
+<meta name="description" content="ТВ онлайн каналы смотреть бесплатные в прямом эфире и в хорошем качестве, каналы в HD качестве, Телевидение Украины" />
+<meta name="keywords" content="каналы смотреть, смотреть каналы онлайн, смотреть бесплатно каналы, смотреть бесплатные каналы, бесплатные каналы смотреть онлайн, каналы онлайн смотреть бесплатно, канал эфир онлайн смотреть" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="COskM68fG_BiZSqnJNNewF6WDiVW9FDUsS29Whobb4Y" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/stil.css" type="text/css" />
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="/com.js"></script>
+</head>
+<body>
+<ins class="7236739a" data-key="4d03282cb0d9d8a804845728ca07487e"></ins>
+<div id="wrap"><div class="m-ha"><a href="/">Главная</a><a href="/kontact.html">Контакты</a></div><div class="clear"></div>
+<div class="content"><div class="menu-header"><h1>Смотреть онлайн ТВ бесплатно</h1></div><div class="glav"></div>
+<div class="clear"></div><div class="ch-ops"><p>Те, кто очень любит много времени проводить в интернете, непременно оценят данный сайт. Так как большое количество людей постепенно отходят от просмотра телевидения и предпочитают для ознакомления с новостями читать разные сайты, а для развлечения наслаждаться фильмами онлайн, то был разработан данный портал. Некоторые серьезно планируют просто выкинуть телевизор, особенно если он старый, другие же по старинке смотрят любимые сериалы по телевизору. Теперь у вас появится повод наконец-то распрощаться с телевизором или отдать его вашей любимой бабушке. Она непременно будет рада.</p><p><strong>Онлайн ТВ</strong> удобно тем, что вы сможете смотреть свои любимые передачи, новинки кино и сериалов, развлекательные и познавательные фильмы, следить за спортивными новостями абсолютно бесплатно. Только представьте, сколько людей платят огромные деньги за кабельное, спутниковое телевидение. На данном сайте можно найти практически все, что душе угодно. Вы сможете подобрать те передачи, мультфильмы, кино, которые вам наиболее интересны. Теперь вы сможете наслаждаться красивыми клипами, радовать свою возлюбленную совместными просмотрами фильмов про любовь, да и детям <strong>Онлайн ТВ</strong> должно непременно понравиться. Ведь вам становятся доступны абсолютно все возможности кабельного и спутникового телевидения.</p><p>Если вы предпочитаете пользоваться ноутбуком, то вам достаточно будет только выхода в интернет, чтобы посмотреть любимый кабельный канал. Вы можете делать это из любой точки планеты, где бы вы не находились в данный момент. А для тех, кто очень устал и хочет поднять себе настроение, подойдут каналы с позитивными шутками и смешными фильмами. Вы можете все выходные наслаждаться просмотром старых советских фильмов или современных с кучей спецэффектов. И все это совершенно бесплатно!</p>
+</div><div class="clear"></div>
+<div class="coment">
+<div class="com_wrapper">
+<div class="com_list"><div class="pagination"><small>Страницы (всего 25):</small><br /><a href="?com_page=1&op=get_list" class="active">1</a><a href="?com_page=2&op=get_list" >2</a><a href="?com_page=3&op=get_list" >3</a><a href="?com_page=4&op=get_list" >4</a> ... <a href="?com_page=2&op=get_list" class="next">&raquo;</a><a href="?com_page=25&op=get_list" class="last">последняя</a></div>
+            <div id="com_176762863551.55" rel="176762863551.55" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">05.01.2026</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">сергей</span><small class="com_answer_control"><a href="?id=176762863551.55" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Понравилось .  Спасибо  . С новым годом 2026</div>
+                
+            </div>
+        
+            <div id="com_176738464778.29" rel="176738464778.29" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">02.01.2026</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Гарри</span><small class="com_answer_control"><a href="?id=176738464778.29" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Очень хочется, чтобы добавили телеканал &quot;Ю&quot;.</div>
+                
+            </div>
+        
+            <div id="com_176729609378.35" rel="176729609378.35" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">01.01.2026</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Марина 32</span><small class="com_answer_control"><a href="?id=176729609378.35" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">С Новым Годом 2026.сайт супер,вот только почему не работает ТНТ И ТВ3?</div>
+                
+            </div>
+        
+            <div id="com_176667605679.22" rel="176667605679.22" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">25.12.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Вадим</span><small class="com_answer_control"><a href="?id=176667605679.22" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Классный сайт с множеством телеканалов. Спасибо создателям и с наступающим 2026 годом!</div>
+                
+            </div>
+        
+            <div id="com_176633950794.83" rel="176633950794.83" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">21.12.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Taras</span><small class="com_answer_control"><a href="?id=176633950794.83" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">отличный сайт</div>
+                
+            </div>
+        
+            <div id="com_176402943821.96" rel="176402943821.96" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">25.11.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Марина</span><small class="com_answer_control"><a href="?id=176402943821.96" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Замечательный сайт</div>
+                
+            </div>
+        
+            <div id="com_176378889146.21" rel="176378889146.21" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">22.11.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">giouras4918@gmail.com</span><small class="com_answer_control"><a href="?id=176378889146.21" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Мне нравится подборка каналов удобно без заморочек</div>
+                
+            </div>
+        
+            <div id="com_176199792444.59" rel="176199792444.59" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">01.11.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Мила</span><small class="com_answer_control"><a href="?id=176199792444.59" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Обожаю этот сайт, но пожалуйста верните показ тв3, домашний и Ю+</div>
+                
+            </div>
+        
+            <div id="com_176137135811.45" rel="176137135811.45" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">25.10.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">дима</span><small class="com_answer_control"><a href="?id=176137135811.45" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">хорошый сайт<br />
+спасибо</div>
+                
+            </div>
+        
+            <div id="com_176089450183.11" rel="176089450183.11" class="com moderated ">
+                <div class="com_avatar"><img src="img/avatar.png"/></div>
+                <div class="com_date " rel="date">19.10.2025</div>
+                
+                <div class="com_title">
+                    <span class="com_name " rel="name">Владимир</span><small class="com_answer_control"><a href="?id=176089450183.11" class="com_answer_link com_control_icon" title="Ответить на комментарий">ответить</a>&nbsp;</small>
+                </div>
+                
+                <div class="com_message " rel="message">Очень хорошо.Сейчас сложно найти на просторах интернета нечто подобное.Качество трансляции хорошее и подбор каналов отличный.Спасибо вам за вашу работу!</div>
+                
+            </div>
+        <div class="pagination"><small>Страницы (всего 25):</small><br /><a href="?com_page=1&op=get_list" class="active">1</a><a href="?com_page=2&op=get_list" >2</a><a href="?com_page=3&op=get_list" >3</a><a href="?com_page=4&op=get_list" >4</a> ... <a href="?com_page=2&op=get_list" class="next">&raquo;</a><a href="?com_page=25&op=get_list" class="last">последняя</a></div></div>
+<div class="com_info"></div>
+<div class="com_desktop">
+				<form method="post" class="com_form">
+				<input type="hidden" name="op" value="add_comment"/>
+				<input type="hidden" name="ref" value=""/>
+				<input type="hidden" name="http_ref" value="http://ip.ontivi.net/"/>
+				<input type="hidden" name="com_start" value="177073738234.5"/>
+				<input type="hidden" name="com_page" value="1"/>
+				<input type="hidden" name="parent" value=""/>
+				<input type="hidden" name="counter" value="1024"/>
+				<div class="com_form_login"><noindex><a href="?op=login" class="com_op" rel="nofollow">login</a></noindex></div>
+				<dl>
+					<dt>Ваше имя:</dt>
+					<dd><input type="text" name="name" required class="com_form_name" value=""/><span class="com_answer_caption"></span></dd>
+					
 
-# НОВОСТИ
-#EXTINF:-1 tvg-id=" 24" tvg-name="КРЫМ 24" tvg-logo="https://pokaz.me/posts/2017-11/1511427105_1490630413_krim24.png" group-title="Новости",КРЫМ 24
-https://s.pokaz.me/vb6PlR5IiGIh-lz87HmE5A/567/1770752126/index.m3u8
-#EXTINF:-1 tvg-id=" 24" tvg-name="Москва 24" tvg-logo="https://pokaz.me/posts/2018-01/1516185202_moskva-24.png" group-title="Новости",Москва 24
-https://s.pokaz.me/pnOI15iidJAROe0agwl1HA/585/1770752117/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="РБК" tvg-logo="https://pokaz.me/posts/2018-01/1515494874_rbk.png" group-title="Новости",РБК
-https://s.pokaz.me/CKQN5O8KsH8SihYPti6ZTg/588/1770752121/index.m3u8
-#EXTINF:-1 tvg-id=" 24" tvg-name="Россия 24" tvg-logo="https://pokaz.me/posts/2017-11/1511428941_1388683762_vesti.png" group-title="Новости",Россия 24
-https://s.pokaz.me/563/index.m3u8?k=1770752127p502i89i921i19Sf4031171884dd20dc0d8ce55ebcb4b26
-
-# ОБРАЗОВАНИЕ
-#EXTINF:-1 tvg-id="24 " tvg-name="24 Техно" tvg-logo="https://pokaz.me/posts/2017-11/1511427266_1483105958_24texno.png" group-title="Образование",24 Техно
-https://s.pokaz.me/TpiHswCytnAtXo1_-QhYtg/116/1770752194/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="Бобёр" tvg-logo="https://pokaz.me/posts/2017-11/1511427822_1497001337_bober.png" group-title="Образование",Бобёр
-https://s.pokaz.me/hI7aiaHu4b5Txox4pto6gA/189/1770752182/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Еда ТВ" tvg-logo="https://pokaz.me/posts/2017-11/1511428014_1393239486_64240194.png" group-title="Образование",Еда ТВ
-https://s.pokaz.me/XccztAo-POCHllgGjPa2eg/198/1770752220/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Моя стихия" tvg-logo="https://pokaz.me/posts/2017-11/1512067834_morksai.png" group-title="Образование",Моя стихия
-https://s.pokaz.me/dGk7PTJd1D7YQcRC0hYs6g/592/1770752169/index.m3u8
-#EXTINF:-1 tvg-id=" 2" tvg-name="Наука 2" tvg-logo="https://pokaz.me/posts/2017-11/1511770739_nauka2_0.png" group-title="Образование",Наука 2
-https://s.pokaz.me/Ytl4vPnNi9VtRr_LYqROzQ/115/1770752173/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="Оружие" tvg-logo="https://pokaz.me/posts/2017-11/1511771582_oruzhie.png" group-title="Образование",Оружие
-https://s.pokaz.me/hI7aiaHu4b5Txox4pto6gA/189/1770752182/index.m3u8
-#EXTINF:-1 tvg-id="  " tvg-name="Охота и рыбалка" tvg-logo="https://pokaz.me/posts/2018-12/1545319804_ohota_ribalka.png" group-title="Образование",Охота и рыбалка
-https://s.pokaz.me/Y_dwz4mT-BfieDDWQ3FADA/538/1770752211/index.m3u8
-#EXTINF:-1 tvg-id="  " tvg-name="Охотник и рыболов" tvg-logo="https://pokaz.me/posts/2018-01/1515849588_ohotnik-i-rybolov.png" group-title="Образование",Охотник и рыболов
-https://s.pokaz.me/ikfclTxe5q4ymGU4k1Rb-g/121/1770752216/index.m3u8
-#EXTINF:-1 tvg-id=" HD" tvg-name="Приключения HD" tvg-logo="https://pokaz.me/posts/2018-11/1541870979_priklusenie.png" group-title="Образование",Приключения HD
-https://s.pokaz.me/eUuBrnxqH3dWbmifLOwegw/542/1770752198/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Совершенно секретно" tvg-logo="https://pokaz.me/posts/2017-12/1514573387_sov-sekretno.png" group-title="Образование",Совершенно секретно
-https://s.pokaz.me/Cj7CBhQG0SUvuFSkSqS1Rg/546/1770752202/index.m3u8
-#EXTINF:-1 tvg-id="Galaxy TV" tvg-name="Galaxy TV" tvg-logo="https://pokaz.me/posts/2018-05/1526239820_galaxy_tv_2.png" group-title="Образование",Galaxy TV
-https://s.pokaz.me/_AN8uCTNPDNCvYzqLEgN1w/205/1770752164/index.m3u8
-#EXTINF:-1 tvg-id="History Channel" tvg-name="History Channel" tvg-logo="https://pokaz.me/posts/2017-11/1511427377_1406471061_history-onlayn.png" group-title="Образование",History Channel
-https://s.pokaz.me/0j1sQlnc2NXF-sxwOisQ-g/114/1770752189/index.m3u8
-#EXTINF:-1 tvg-id="RTG" tvg-name="RTG" tvg-logo="https://pokaz.me/posts/2018-10/1540800669_rtg.png" group-title="Образование",RTG
-https://s.pokaz.me/y32dt31cNFW33SZprwvgYg/545/1770752177/index.m3u8
-#EXTINF:-1 tvg-id="Travel and Adventure" tvg-name="Travel and Adventure" tvg-logo="https://pokaz.me/posts/2017-11/1511428340_1428669569_travel-and-adventure.png" group-title="Образование",Travel and Adventure
-https://s.pokaz.me/h_AEuJyiiJZj9i_Ds8x3QQ/112/1770752224/index.m3u8
-#EXTINF:-1 tvg-id="Travel Channel" tvg-name="Travel Channel" tvg-logo="https://pokaz.me/posts/2017-11/1511428117_1407140774_travel-channel.png" group-title="Образование",Travel Channel
-https://s.pokaz.me/-_4yfzQzKrI_uwPyY_jrjA/113/1770752207/index.m3u8
-
-# ОБЩИЕ
-#EXTINF:-1 tvg-id="" tvg-name="Домашний" tvg-logo="https://pokaz.me/posts/2017-11/1511429092_1461686810_domashniy.png" group-title="Общие",Домашний
-https://s.pokaz.me/CkYVxft2FwNcJv1pqrevjQ/561/1770752285/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="Звезда" tvg-logo="https://pokaz.me/posts/2017-11/1511428030_1416945233_zvezda.png" group-title="Общие",Звезда
-https://s.pokaz.me/wER8fbZ5WzlHqt8-hTWOSw/125/1770752307/index.m3u8
-#EXTINF:-1 tvg-id=" 1" tvg-name="Крым 1" tvg-logo="https://pokaz.me/posts/2017-12/1514366573_krym1.png" group-title="Общие",Крым 1
-https://s.pokaz.me/jx1OztY4q3bR74yGHDXoDw/533/1770752298/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Мир ТВ" tvg-logo="https://pokaz.me/posts/2018-05/1526240782_mir.png" group-title="Общие",Мир ТВ
-https://s.pokaz.me/J387uqFr3fWppfEFs6DF8Q/587/1770752302/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="НТВ" tvg-logo="https://pokaz.me/posts/2017-11/1511428847_1381933138_ntv.png" group-title="Общие",НТВ
-https://s.pokaz.me/6To1zdyLn5MwqokWA7gqUA/537/1770752272/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Первый канал" tvg-logo="https://pokaz.me/posts/2017-11/1511429376_1463597059_pervyy-kanal.png" group-title="Общие",Первый канал
-https://s.pokaz.me/H3RZihhUDrUqqp6RopFPpA/540/1770752263/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Пятый канал" tvg-logo="https://pokaz.me/posts/2017-11/1511429153_1392740088_5kanal.png" group-title="Общие",Пятый канал
-https://s.pokaz.me/TxZqfNcFS3FXUrODD3xW3g/524/1770752289/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Рен ТВ" tvg-logo="https://pokaz.me/posts/2018-12/1545320907_rentv.png" group-title="Общие",Рен ТВ
-https://s.pokaz.me/CypqaP71DfOpbXmBhQbzuw/543/1770752276/index.m3u8
-#EXTINF:-1 tvg-id=" 1" tvg-name="Россия 1" tvg-logo="https://pokaz.me/posts/2017-11/1511432255_rossiya-1.png" group-title="Общие",Россия 1
-https://s.pokaz.me/UR6-LEeLKcQnbxcOIaQyfQ/544/1770752267/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Россия К" tvg-logo="https://pokaz.me/posts/2018-03/1520255669__rossiya_k_1.png" group-title="Общие",Россия К
-https://s.pokaz.me/FFDRq6nZo_4xhSYm-jNrNQ/579/1770752293/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="ТВЦ" tvg-logo="https://pokaz.me/posts/2018-05/1525937702_1525937690.png" group-title="Общие",ТВЦ
-https://s.pokaz.me/fx_nLamQgt8xVskXUV4log/548/1770752280/index.m3u8
-
-# РАЗВЛЕЧЕНИЕ
-#EXTINF:-1 tvg-id="" tvg-name="СТС" tvg-logo="https://pokaz.me/posts/2017-11/1511428757_1461317169_sts.png" group-title="Развлечение",СТС
-https://s.pokaz.me/zUdBlftSyXfAdlERQBgywA/591/1770752139/index.m3u8
-#EXTINF:-1 tvg-id=" Love" tvg-name="СТС Love" tvg-logo="https://pokaz.me/posts/2017-11/1511427784_1481287122_sts_love.png" group-title="Развлечение",СТС Love
-https://s.pokaz.me/Z2iCWyf8qC4pRLqIUEIREw/526/1770752152/index.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="ТНТ" tvg-logo="https://pokaz.me/posts/2017-11/1511428867_1461317268_tnt.png" group-title="Развлечение",ТНТ
-https://s.pokaz.me/gu3kL2EuZJJvG0tP-BX8kA/547/1770752134/index.m3u8
-#EXTINF:-1 tvg-id="4" tvg-name="ТНТ4" tvg-logo="https://pokaz.me/posts/2017-12/1512374622_tnt4.png" group-title="Развлечение",ТНТ4
-https://s.pokaz.me/Oywi9XrA9e-4EYO3FZh7Tw/105/1770752143/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Че ТВ" tvg-logo="https://pokaz.me/posts/2018-12/1545320148__shetv.png" group-title="Развлечение",Че ТВ
-https://s.pokaz.me/Z2iCWyf8qC4pRLqIUEIREw/526/1770752152/index.m3u8
-#EXTINF:-1 tvg-id=" " tvg-name="Ю ТВ" tvg-logo="https://pokaz.me/posts/2018-12/1545319209_yu_tv.png" group-title="Развлечение",Ю ТВ
-https://s.pokaz.me/-vKjb-9eTu5kxqyICNewQg/107/1770752147/index.m3u8
-
-# СПОРТ
-#EXTINF:-1 tvg-id="Setanta Sports" tvg-name="Setanta Sports" tvg-logo="https://pokaz.me/posts/2017-11/1511426983_1484409831_sport.png" group-title="Спорт",Setanta Sports
-https://s.pokaz.me/208/index.m3u8?k=1770752157p502i89i921i19S4b1f26d9bb8c161b726bd338f9ca3bac
+					<dt>Комментарий:</dt>
+					<dd>
+						<textarea name="message" class="com_form_message" maxlength="1024"></textarea>
+						<input type="text" name="com_counter" readonly class="com_counter" value="1024"/>
+					</dd>
+					<dt></dt>
+					<dd>
+						<input type="checkbox" name="e3d3030044f767d2608d76826e4a160d" class="com_form_not_robot" value="test"/> - Проверка от спама, установите галочку.
+						
+					</dd>
+					<dt></dt>
+					<dd>
+                        <input type="submit" class="com_form_submit" value="Добавить">
+                    </dd>
+				</dl>
+			</form></div>
+</div>
+<script>$(".com_wrapper").com()</script></div></div>
+<script>$.get("chanel",{catgl:"1"},function(data){$('.glav').html(data);});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-138CL07HP0"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);};gtag('js', new Date());gtag('config', 'G-138CL07HP0');</script>
+<ins class="7236739a" data-key="6cecc7814160b0544d2d4651538eca7c"></ins><ins class="7236739a" data-key="91d47801c288c48c0f0edbb47611dff1"></ins>
+<script async src="https://srv224.com/b9efad2b.js"></script>
+</body></html>

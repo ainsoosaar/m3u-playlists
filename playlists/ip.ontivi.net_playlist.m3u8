@@ -152,7 +152,7 @@
 				<input type="hidden" name="op" value="add_comment"/>
 				<input type="hidden" name="ref" value=""/>
 				<input type="hidden" name="http_ref" value="http://ip.ontivi.net/"/>
-				<input type="hidden" name="com_start" value="177080578304.03"/>
+				<input type="hidden" name="com_start" value="177080938309.17"/>
 				<input type="hidden" name="com_page" value="1"/>
 				<input type="hidden" name="parent" value=""/>
 				<input type="hidden" name="counter" value="1024"/>
@@ -169,7 +169,7 @@
 					</dd>
 					<dt></dt>
 					<dd>
-						<input type="checkbox" name="2e7645166d19b8b85ede8224e89d21a7" class="com_form_not_robot" value="test"/> - Проверка от спама, установите галочку.
+						<input type="checkbox" name="15a3c10e4df7f95f30aadac770567761" class="com_form_not_robot" value="test"/> - Проверка от спама, установите галочку.
 						
 					</dd>
 					<dt></dt>
